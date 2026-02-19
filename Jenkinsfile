@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Pull') {
             steps {
-                git branch: 'main', url: 'https://github.com/shubhamkalsait/EasyCRUD.git'
+                git name: 'main', url: 'https://github.com/shubhamkalsait/EasyCRUD.git'
             }
         }
     }
