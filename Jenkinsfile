@@ -4,7 +4,13 @@ pipeline {
     stages {
         stage('Pull') {
             steps {
-                git name: 'main', url: 'https://github.com/shubhamkalsait/EasyCRUD.git'
+                checkout([
+                    $class: 'GitSCM',
+                    branches: [[name: '*/main']],
+                    userRemoteConfigs: [[
+                        url: 'https://github.com/shubhamkalsait/EasyCRUD.git'
+                    ]]
+                ])
             }
         }
     }
