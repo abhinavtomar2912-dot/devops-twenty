@@ -1,7 +1,7 @@
-pipeline {
+pipeline{
     agent any
     stages {
-        stage('Pull') {
+        stage('Checkout') {
             steps {
                 checkout([
                     $class: 'GitSCM',
@@ -12,19 +12,11 @@ pipeline {
                 ])
             }
         }
-        stage ('Build') {
+        stage ('build'){
             steps {
-                echo "building"
+                echo "builded"
             }
-        }
-        
-        stage ('test') {
-            steps {
-                echo "testing"
-            }
-        }
-        
             
-        
+        }
     }
 }
