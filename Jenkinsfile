@@ -1,6 +1,6 @@
-pipeline{
+pipeline {
     agent any
-    stages {
+    stages{
         stage ('Checkout'){
             steps {
                 git branch: 'main',
@@ -16,4 +16,5 @@ pipeline{
             }
         }
     }
+    
 }
