@@ -1,4 +1,4 @@
-pipeline {
+pipeline{
     agent any
     stages {
         stage ('Checkout'){
@@ -9,19 +9,11 @@ pipeline {
         }
         stage ('build'){
             steps {
-                echo 'building done'
+                sh '''
+                cd backend
+                mvn clean package -DskipTests
+                '''
             }
         }
-        stage ('test'){
-            steps {
-                echo 'testing done'
-            }
-        }
-        stage ('deploy'){
-            steps {
-                echo 'deploy done'
-            }
-        }
-        
     }
 }
