@@ -14,7 +14,7 @@ pipeline {
             steps {
                 sh '''
                 cd backend
-                docker build -t shubhamkalsait1/easy-backend:latest .
+                docker build -t abhinav2912/easy-backend:latest .
                 '''
             }
         }
@@ -23,7 +23,7 @@ pipeline {
             steps {
                 sh '''
                 cd frontend
-                docker build -t shubhamkalsait1/easy-frontend:latest .
+                docker build -t abhinav2912/easy-frontend:latest .
                 '''
             }
         }
@@ -31,8 +31,8 @@ pipeline {
         stage('Docker Push') {
             steps {
                 sh '''
-                docker push shubhamkalsait1/easy-backend:latest
-                docker push shubhamkalsait1/easy-frontend:latest
+                docker push abhinav2912/easy-backend:latest
+                docker push abhinav2912/easy-frontend:latest
                 '''
             }
         }
